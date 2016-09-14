@@ -42,4 +42,29 @@ public class TokenListImpl implements TokenList{
         copyElements(newArray, tokensArray, numberOfTokens);
         tokensArray = newArray;
     }
+
+    @Override
+    public void add(Token token) {
+
+    }
+
+    @Override
+    public void remove(int index) {
+
+    }
+
+    @Override
+    public void set(int index, Token token) {
+
+    }
+
+    @Override
+    public Token get(int index) {
+        return null;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
 }
