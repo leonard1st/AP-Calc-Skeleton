@@ -11,7 +11,7 @@ public class TokenListImpl implements TokenList{
     }
 
     TokenListImpl(TokenListImpl targetList){
-        numberOfTokens = targetList.tokensArray.size();
+        numberOfTokens = targetList.size();
         tokensArray = new Token[numberOfTokens];
         copyElements(tokensArray, targetList.tokensArray, numberOfTokens);
     }
