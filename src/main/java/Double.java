@@ -5,7 +5,7 @@
  * @structure linear
  * @domain all rows of characters
  */
-public interface Token {
+public interface Double {
     int     NUMBER_TYPE = 1,
             OPERATOR_TYPE = 2,
             PARENTHESIS_TYPE = 3;

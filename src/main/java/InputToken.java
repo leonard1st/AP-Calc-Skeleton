@@ -1,4 +1,4 @@
-class InputToken implements Token{
+class InputToken implements Double{
 
     private String value;
     private int type;
@@ -16,7 +16,7 @@ class InputToken implements Token{
     InputToken(double value )
     {
         this.value = String.valueOf(value);
-        this.type = Token.NUMBER_TYPE;
+        this.type = Double.NUMBER_TYPE;
         this.precedence = -1;
     }
 
@@ -55,7 +55,7 @@ class InputToken implements Token{
      * @pre - targetToken has to be of type Token
      * @post - the value of the targetToken has been attributed to the fields of the current object
      */
-    InputToken(Token targetToken)
+    InputToken(Double targetToken)
     {
         this.value = targetToken.getValue();
         this.type = targetToken.getType();
@@ -134,11 +134,11 @@ class InputToken implements Token{
      */
     private int parseType(){
         if(OPERATOR_TOKENS.contains(this.value))
-            return Token.OPERATOR_TYPE;
+            return Double.OPERATOR_TYPE;
         else
             if(PARENTHESIS_TOKENS.contains(this.value))
-                return Token.PARENTHESIS_TYPE;
-        return Token.NUMBER_TYPE;
+                return Double.PARENTHESIS_TYPE;
+        return Double.NUMBER_TYPE;
     }
 
     /**
@@ -146,7 +146,7 @@ class InputToken implements Token{
      * @return - Returns the precedence if applicable, otherwise it returns -1;
      */
     private int parsePrecedence(){
-        if( (this.getType() == Token.NUMBER_TYPE) || (this.getType() == Token.PARENTHESIS_TYPE) )
+        if( (this.getType() == Double.NUMBER_TYPE) || (this.getType() == Double.PARENTHESIS_TYPE) )
             return -1;
         String value = this.getValue();
         if(value.equals("+") || value.equals("-"))

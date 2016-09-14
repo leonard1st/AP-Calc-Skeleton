@@ -12,7 +12,7 @@ public class Main implements CalculatorInterface {
 
         while( scanner.hasNext() )
         {
-            Token token;
+            Double token;
             String value = scanner.next();
             token = getParsedToken(value);
 
@@ -22,9 +22,9 @@ public class Main implements CalculatorInterface {
         return null;
     }
 
-    private Token getParsedToken(String tokenString)
+    private Double getParsedToken(String tokenString)
     {
-        Token token;
+        Double token;
         Scanner doubleCheck = new Scanner(tokenString);
         if( doubleCheck.hasNextDouble() )
             token = new InputToken(Double.valueOf(tokenString));

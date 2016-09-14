@@ -10,7 +10,7 @@ interface TokenList {
      * @post The token 'token' has been added at the end of the TokenList, 
      *       preserving the previous order.
      */
-    void add(Token token);
+    void add(Double token);
 
 
     /**
@@ -27,7 +27,7 @@ interface TokenList {
      * @pre   index < size();
      * @post  The element at location 'index' has the value 'token', preserving the previous order.
      */
-    void set(int index, Token token);
+    void set(int index, Double token);
 
     /**
      *
@@ -36,7 +36,7 @@ interface TokenList {
      * @pre index < size();
      * @post The element at index 'index' has been returned.
      */
-    Token get(int index);
+    Double get(int index);
 
     /**
      * @pre -
