@@ -8,9 +8,30 @@ public class Main implements CalculatorInterface {
 
     public TokenList readTokens(String input) {
         // TODO: Implement this
+        Scanner scanner = new Scanner(input);
+
+        while( scanner.hasNext() )
+        {
+            Token token;
+            String value = scanner.next();
+            token = getParsedToken(value);
+
+            System.out.println(token.getValue());
+        }
+
         return null;
     }
 
+    private Token getParsedToken(String tokenString)
+    {
+        Token token;
+        Scanner doubleCheck = new Scanner(tokenString);
+        if( doubleCheck.hasNextDouble() )
+            token = new InputToken(Double.valueOf(tokenString));
+        else
+            token = new InputToken(tokenString);
+        return token;
+    }
 
     public Double rpn(TokenList tokens) {
         // TODO: Implement this
@@ -24,8 +45,11 @@ public class Main implements CalculatorInterface {
 
     private void start() {
         // Create a scanner on System.in
+        Scanner scanner = new Scanner(System.in);
         
         // While there is input, read line and parse it.
+        String input = scanner.nextLine();
+        TokenList parsedTokens = readTokens(input);
     }
 
     public static void main(String[] argv) {
