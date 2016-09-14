@@ -42,7 +42,7 @@ public class TokenListImpl implements TokenList{
         copyElements(newArray, tokensArray, numberOfTokens);
         tokensArray = newArray;
     }
-
+//
     @Override
     public void add(Token token) {
 
