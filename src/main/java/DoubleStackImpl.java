@@ -2,23 +2,23 @@
 public class DoubleStackImpl implements DoubleStack{
 
 	static final int INITIAL = 100;
-	private Double[] doublesArray;
+	private Token[] doublesArray;
 	int numberOfDoubles;
 
 	DoubleStackImpl(){
-		doublesArray = new Double[INITIAL];
+		doublesArray = new Token[INITIAL];
 		numberOfDoubles = 0;
 	}
 	
 	
-	public void push(Double element) {
+	public void push(Token element) {
 		
 		doublesArray[numberOfDoubles] = element;
 		numberOfDoubles++;
 		
 	}
 
-	public Double pop() {
+	public Token pop() {
 		
 		numberOfDoubles--;
 		
@@ -26,7 +26,7 @@ public class DoubleStackImpl implements DoubleStack{
 	}
 
 	
-	public Double top() {
+	public Token top() {
 		
 		return doublesArray[numberOfDoubles-1];
 	}

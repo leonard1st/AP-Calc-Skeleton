@@ -2,17 +2,17 @@
 public class TokenListImpl implements TokenList{
 
 	static final int INITIAL = 100;
-	Double[] tokensArray;
+	Token[] tokensArray;
 	int numberOfTokens;
 
 	TokenListImpl(){
-		tokensArray = new Double[INITIAL];
+		tokensArray = new Token[INITIAL];
 		numberOfTokens = 0;
 	}
 
 	TokenListImpl(TokenListImpl targetList){
 		numberOfTokens = targetList.size();
-		tokensArray = new Double[numberOfTokens];
+		tokensArray = new Token[numberOfTokens];
 		copyElements(tokensArray, targetList.tokensArray, numberOfTokens);
 	}
 
@@ -23,7 +23,7 @@ public class TokenListImpl implements TokenList{
 	 * @param targetArray - Token[] type; the array from which the elements will be copied
 	 * @param sizeToCopy - Int type; the number of elements to be copied from targetArray to destinationArray
 	 */
-	private void copyElements(Double[] destinationArray, Double[] targetArray, int sizeToCopy){
+	private void copyElements(Token[] destinationArray, Token[] targetArray, int sizeToCopy){
 		if( (sizeToCopy + numberOfTokens) > destinationArray.length)
 		{
 			increaseListSize();
@@ -38,7 +38,7 @@ public class TokenListImpl implements TokenList{
 
 	private void increaseListSize(){
 		int tokenArraySize = tokensArray.length * 2;
-		Double[] newArray = new Double[tokenArraySize];
+		Token[] newArray = new Token[tokenArraySize];
 		copyElements(newArray, tokensArray, numberOfTokens);
 		tokensArray = newArray;
 	}
@@ -52,7 +52,7 @@ public class TokenListImpl implements TokenList{
 	}
 
 
-	public void add(Double token) {
+	public void add(Token token) {
 		tokensArray[numberOfTokens] = token;
 		numberOfTokens++;
 
@@ -73,7 +73,7 @@ public class TokenListImpl implements TokenList{
 	}
 
 
-	public void set(int index, Double token) {
+	public void set(int index, Token token) {
 
 		if (isInRange(index)){
 			tokensArray[index] = token;
@@ -82,7 +82,7 @@ public class TokenListImpl implements TokenList{
 	}
 
 	
-	public Double get(int index) {
+	public Token get(int index) {
 
 		if (isInRange(index)){
 

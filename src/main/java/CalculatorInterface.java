@@ -10,7 +10,7 @@ interface CalculatorInterface {
      * @param tokens A list of tokens signifying an RPN expression.
      * @return The result of the RPN expression.
      */
-    Double rpn(TokenList tokens);
+    Token rpn(TokenList tokens);
 
     /*
      * @param tokens A list of tokens signifying an arithmetic expression.

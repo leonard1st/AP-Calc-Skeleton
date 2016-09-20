@@ -1,5 +1,5 @@
 /** 
- * @elements numbers of the type Double
+ * @elements numbers of the type Token
  * @structure linear
  * @domain all rows of Doubles
  **/
@@ -7,21 +7,21 @@ public interface DoubleStack {
 
     /**
      * @pre -
-     * @post Double element is now at the top of the stack.
+     * @post Token element is now at the top of the stack.
      */
-    void push(Double element);
+    void push(Token element);
 
     /**
      * @pre The stack is not empty
      * @post The element at the top of the stack is returned and deleted.
      */
-    Double pop();
+    Token pop();
 
     /**
      * @pre The stack is not empty
      * @post The element at the top of the stack is returned.
      */
-    Double top();
+    Token top();
 
     /**
      * @post The number of elements on the stack is returned

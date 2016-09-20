@@ -1,6 +1,3 @@
-import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main implements CalculatorInterface {
@@ -12,7 +9,7 @@ public class Main implements CalculatorInterface {
 
         while( scanner.hasNext() )
         {
-            Double token;
+            Token token;
             String value = scanner.next();
             token = getParsedToken(value);
 
@@ -22,18 +19,18 @@ public class Main implements CalculatorInterface {
         return null;
     }
 
-    private Double getParsedToken(String tokenString)
+    private Token getParsedToken(String tokenString)
     {
-        Double token;
+        Token token;
         Scanner doubleCheck = new Scanner(tokenString);
         if( doubleCheck.hasNextDouble() )
-            token = new InputToken(Double.valueOf(tokenString));
+            token = new InputToken(Token.valueOf(tokenString));
         else
             token = new InputToken(tokenString);
         return token;
     }
 
-    public Double rpn(TokenList tokens) {
+    public Token rpn(TokenList tokens) {
         // TODO: Implement this
         return null;
     }

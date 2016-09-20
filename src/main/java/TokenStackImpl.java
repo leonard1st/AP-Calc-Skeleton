@@ -2,16 +2,16 @@
 public class TokenStackImpl implements TokenStack {
 
 	static final int INITIAL = 100;
-	Double[] tokensArray;
+	Token[] tokensArray;
 	int numberOfTokens;
 
 	TokenStackImpl(){
-		tokensArray = new Double[INITIAL];
+		tokensArray = new Token[INITIAL];
 		numberOfTokens = 0;
 	}
 
 
-	public void push(Double token) {
+	public void push(Token token) {
 
 		tokensArray[numberOfTokens] = token;
 		numberOfTokens++;
@@ -19,7 +19,7 @@ public class TokenStackImpl implements TokenStack {
 	}
 
 
-	public Double pop() {
+	public Token pop() {
 
 		numberOfTokens--;
 
@@ -27,7 +27,7 @@ public class TokenStackImpl implements TokenStack {
 	}
 
 
-	public Double top() {
+	public Token top() {
 
 		return tokensArray[numberOfTokens-1];
 	}
